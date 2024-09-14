@@ -12,7 +12,7 @@ const pacman = {
 let mouthAngle = 0;
 let mouthDirection = 1;
 const mouthSpeed = 0.07;
-const characters = 'HappyBirthday'.split('');
+const characters = 'H'.split('');
 const characterSize = 30;
 let currentCharacterIndex = 0;
 let currentCharacter = null;
@@ -272,6 +272,7 @@ function update() {
 function handleGameEnd() {
     isGameOver = true;
     document.getElementById('game-container').style.display = 'none';
+    document.getElementById('mobile-controls').style.display = 'none';
     document.getElementById('game-over-container').style.display = 'block';
 }
 
@@ -280,7 +281,7 @@ function handleWin() {
     document.getElementById('game-over-message').textContent = 'Happy 22nd birthday Michelle!';
     document.getElementById('game-over-sub-message').textContent = 'From Amit & Botzer';
     generateBalloons(22);
-    startConfetti();
+    generateConfetti(222);
 }
 
 function handleLoss() {
@@ -297,7 +298,7 @@ function generateBalloons(num) {
     for (let i = 0; i < num; i++) {
         let balloon = document.createElement('div');
         balloon.className = 'balloon';
-        const size = Math.floor(Math.random() * 60 + 50);
+        const size = Math.floor(Math.random() * 60 + 30);
         balloon.style.width = `${size}px`;
         balloon.style.height = `${size}px`;
         let balloonImg = document.createElement('img');
@@ -320,10 +321,10 @@ function generateBalloons(num) {
     }
 }
 
-function startConfetti() {
+function generateConfetti(num) {
     const confettiContainer = document.querySelector('.confetti-container');
     confettiContainer.innerHTML = '';
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < num; i++) {
         let confettiPiece = document.createElement('div');
         confettiPiece.className = 'confetti';
         confettiPiece.style.backgroundColor = getRandomNeonColor();

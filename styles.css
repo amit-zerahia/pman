@@ -152,6 +152,7 @@ button:hover {
         height: 3rem;
         margin: 0.5rem; 
         cursor: pointer;
+        text-align: center;
     }
     
     #mobile-controls button:active {
