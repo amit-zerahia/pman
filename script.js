@@ -346,22 +346,22 @@ function setPacmanMovement(dx, dy, direction) {
     pacman.direction = direction;
 }
 
-document.getElementById('left').addEventListener('touchend', () => {
+document.getElementById('left').addEventListener('touchstart', () => {
     if (isGameOver) return;
     setPacmanMovement(-pacman.speed, 0, 'left');
 });
 
-document.getElementById('right').addEventListener('touchend', () => {
+document.getElementById('right').addEventListener('touchstart', () => {
     if (isGameOver) return;
     setPacmanMovement(pacman.speed, 0, 'right');
 });
 
-document.getElementById('up').addEventListener('touchend', () => {
+document.getElementById('up').addEventListener('touchstart', () => {
     if (isGameOver) return;
     setPacmanMovement(0, -pacman.speed, 'up');
 });
 
-document.getElementById('down').addEventListener('touchend', () => {
+document.getElementById('down').addEventListener('touchstart', () => {
     if (isGameOver) return;
     setPacmanMovement(0, pacman.speed, 'down');
 });
